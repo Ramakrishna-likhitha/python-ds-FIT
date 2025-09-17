@@ -1,0 +1,25 @@
+FASTAPI
+-------------
+FastAPI is a modern and high performance python web framework used to buit APIS quickly and efficiently.........it allow developer to create RESTful API using python
+features of fast api
+----------------------
+1)automatic documentation
+2)python type hints
+3)data validation
+4)asynchronous support
+5)dependency injection
+6)built-in security
+install and setup of fastapi
+------------------------------
+pip install fastapi
+pip install uvicorn
+simple code create simple api
+---------------------------------
+from fastapi import fastapi
+app = FastAPI()
+@app.get("/").............................handle http get request and send root URL
+def read_root():
+    return {"message":"hello,fastAPI!"}
+.....................................................
+after this enter this command 
+unicorn main:app-reload.................after this command open your web browser and navigate to http://localhost:8000/............then you can see the msg {"message":"hello,fastAPI!"}
