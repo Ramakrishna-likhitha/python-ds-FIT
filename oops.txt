@@ -1,0 +1,177 @@
+Python OOP
+-----------------
+OOP stands for Object-Oriented Programming.
+Python is an object-oriented language, allowing you to structure your code using classes and objects for better organization and reusability.
+
+Advantages of OOP
+------------------
+Provides a clear structure to programs
+Makes code easier to maintain, reuse, and debug
+Helps keep your code DRY (Don't Repeat Yourself)
+Allows you to build reusable applications with less code
+Tip: The DRY principle means you should avoid writing the same code more than once. Move repeated code into functions or classes and reuse it.
+classes and object in opps
+-------------------------------
+class....................inside the class must be something we we use parameter inside the class then we can pass arguments dairectly in the object creation other wise we can't....that time we can send argunets in that method call only(means function call)
+--------
+A Class is like an object constructor, or a "blueprint" for creating objects.
+Create a Class
+------------------
+To create a class, use the keyword class:
+ex: class MyClass:
+      x = 5
+    print(MyClass).............error class '__main__.MyClass'>
+object
+--------
+object is an instance of the class
+creating object
+---------------
+class MyClass:
+  x = 5
+p1 = MyClass()
+print(p1.x)...................5 o/p
+...............................................
+class MyClass():
+  x = 5
+p1 = MyClass()
+print(p1.x)...................this one also correct
+if we are not using the parenthesis()..then no problem if you are not using the parentesis then it automatically take inheritate from the object.........but some time we have to use the ()......when we inheritate any property from the parent class then we use this ()
+ex..........
+class Animal:
+    pass
+class Dog(Animal):   # Dog inherits from Animal
+    pass
+....................................................................
+pass 
+------
+If you write a class, function, or loop with no code inside, you’ll get an IndentationError..........
+To avoid this, we use pass — it means “do nothing”.
+
+
+note       : with out init we can pass the argument dairectly to              
+--------     class
+               ex:class calculator:
+                      def add(self, a ,b):
+                           return (a+b)
+             p1=calculator(12,34)
+             p1.add()
+--------------------------------------------------------------------18-09-2025
+What is __init__
+----------------------
+__init__ is a special method in Python classes.
+It is called automatically when you create an object.
+It’s also called a constructor because it "constructs" the object.     class ClassName:
+                def __init__(self, parameters):
+        # initialize object variables
+            self.variable = parameters
+Note: The __init__() method is called automatically every time the class is being used to create a new object.
+
+Why do we use self?
+--------------------------------
+The self parameter is a reference to the current object of the class, and is used to access variables that belong to the class.
+
+It does not have to be named self, you can call it whatever you like, but it has to be the first parameter of any function in the class
+
+What is __str__?
+............................
+__str__ is a special method in Python.
+Its main purpose is to define how an object should be represented as a string when you use print() or str() on it.
+
+Create Methods
+----------------------
+A method is just a function inside a class that works with the object’s data.
+It always has self as the first parameter.
+Simple Method example:
+class Student:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age 
+    # method we created
+    def display(self):
+        print(f"My name is {self.name} and I am {self.age} years old.")
+# create object
+s1 = Student("Likhitha", 21)
+s1.display()   # calling method
+Method with Parameters
+--------------------------
+class Calculator:
+    def add(self, a, b):    # method has 2 parameters a, b
+        return a + b         #in normal method you can use both                                  			       return and print
+    def multiply(self, a, b):   # method has 2 parameters a, b
+        return a * b
+c = Calculator()             # create object
+print(c.add(10, 20))         # 10 and 20 go into a, b → 30
+print(c.multiply(5, 6))      # 5 and 6 go into a, b → 30
+normal method and sepecial method
+----------------------------------
+A normal method is a function defined inside a class.
+You must call it manually using the object.
+Its name is something you choose (like display(), add()).
+example:
+        class radha:
+            def __init__(self,name,age):
+                  self.name=name  #self.variable=parameter
+                  self.age=age
+            def display(self): #..........method must have self			  return "name:"{self.name} , "age:"{self.age}		onj1=radha('likhitha',23)
+        print(onj1.display())		                 					 
+special method
+-------------
+These are built-in methods with double underscores (__method__).
+Python calls them automatically in special situations.
+Example: __init__, __str__, __len__, __add__, etc
+        
+    class radhe :
+        def __init__(self,name,id):
+              self.name=name
+              self.id=id
+       def __str__(self):
+        return f"name: {self.name} id: {self.id}"
+obj1=radhe('likhitha',12)
+print(obj1)
+
+Modify Object Properties
+--------------------------
+
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+  def myfunc(self):
+    print("Hello my name is " + self.name)
+p1 = Person("John", 36)
+p1.age = 40
+print(p1.age)
+
+delete the object
+---------------------
+del object name
+ex del p1;
+delete the object property
+--------------------
+del objectname.propertyname
+ex del p1.age
+
+The pass Statement
+----------------------
+class definitions cannot be empty, but if you for some reason have a class definition with no content, put in the pass statement to avoid getting an error.
+ ex class Person:
+      pass
+
+
+
+Python Inheritance
+-----------------------
+nheritance means one class can use the properties and methods of another class.
+The class which gives features = Parent (Base) class
+The class which receives features = Child (Derived) class
+Just like children inherit features from parents in real life.
+Types of Inheritance in Python
+---------------------------------------------
+Single Inheritance → One parent, one child
+Multiple Inheritance → Child inherits from multiple parents
+Multilevel Inheritance → Grandparent → Parent → Child
+Hierarchical Inheritance → One parent, many children
+Hybrid Inheritance → Combination of above
+
+Single Inheritance
+-------------------
